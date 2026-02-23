@@ -2,7 +2,7 @@
 
 ![Feature](https://img.shields.io/badge/feature-security--setup-blue)
 ![Admin](https://img.shields.io/badge/type-admin-orange)
-![Updated](https://img.shields.io/badge/updated-2026--02--20-brightgreen)
+![Updated](https://img.shields.io/badge/updated-2026--02--23-brightgreen)
 
 > **Configure authentication and security features - 2FA, passwords, sessions, and encryption**
 
@@ -162,7 +162,7 @@ Enable scoring:
 
 | Setting | Default |
 |---------|---------|
-| Idle Timeout | 30 minutes |
+| Idle Timeout | 8 hours |
 | Max Duration | 24 hours |
 | Remember Me | 7 days |
 
@@ -349,4 +349,4 @@ See [Audit Logs](audit-logs.md) for details.
 
 ---
 
-*Last Updated: 2026-02-20*
+*Last Updated: 2026-02-23*
