@@ -11,20 +11,51 @@ Complete documentation for VKInsight - the Kubernetes Pod Log Analyzer.
 
 ## 💡 Why VKInsight?
 
-**The Problem:** Kubernetes debugging is painful. You're drowning in logs spread across dozens of pods, containers, and services. Finding that one error means hours of `kubectl logs | grep` across multiple terminals.
+**Kubernetes debugging is painful.** You're drowning in logs from 50+ pods across multiple namespaces. Finding that critical error means hours of `kubectl logs | grep` across terminals. And when the P1 hits at 2am, you need answers in minutes—not hours.
 
-**The Solution:** VKInsight gives you a single pane of glass for all your pod logs:
+**VKInsight gives you a single pane of glass for all your pod logs:**
 
 | Challenge | VKInsight Solution |
 |-----------|-------------------|
-| Searching 50+ pods manually | **Cross-Pod Search** - Query all pods in one click |
-| "Which pod had that error?" | **Pattern Clustering** - Auto-group similar errors |
-| Slow `grep` on large files | **DuckDB + ripgrep** - 20-35x faster queries |
+| Searching 50+ pods manually | **Cross-Pod Search** - Query all pods in one click (6-8x faster) |
+| "Which pod had that error?" | **Pattern Clustering** - ML auto-groups similar errors |
+| Slow `grep` on large files | **DuckDB + ripgrep** - 20-35x faster time filtering |
 | Tracing requests across services | **Trace Visualization** - Sequence diagrams from trace IDs |
 | Repetitive log noise | **Smart Squash** - Collapse 100 identical lines into one |
-| Need SQL on logs | **DuckDB Integration** - Query logs with familiar SQL |
+| Need SQL on logs | **DuckDB SQL Playground** - Query logs with familiar SQL |
+| Manual root cause analysis | **AI Analysis (OCA)** - Intelligent root cause detection |
+| SSH into servers for logs | **Server Browser** - Browse remote servers from your browser |
+| Fetching debug data manually | **ISDE Fetcher** - One-click debug data retrieval |
+| Personal or team deployment | **Flexible Deployment** - Single-user (Windows/Mac) or multi-user (Linux) |
 
-**Time to First Analysis:** 10 minutes | **Time to Master:** 4-6 hours
+### Who Benefits
+
+| Role | Key Value |
+|------|-----------|
+| **SRE / On-Call** | Resolve P1s faster with AI-powered root cause analysis |
+| **DevOps Engineer** | Debug deployments without SSH terminal juggling |
+| **Support Engineer** | Analyze customer issues 50% faster |
+| **Platform Team** | Monitor cluster health with pattern trending |
+
+### vs. Alternatives
+
+| Capability | kubectl + grep | ELK/Splunk | **VKInsight** |
+|------------|:---:|:---:|:---:|
+| Setup time | 0 min | 2-3 weeks | **5 min** |
+| Cross-pod search | Manual (50 terminals) | Yes | **One click** |
+| AI root cause | None | Plugins | **Built-in (OCA)** |
+| Pattern clustering | Manual | Config needed | **Automatic (ML)** |
+| Infrastructure | None | 3+ servers | **None** |
+| Cost | Free | $$$$$ | **Free** |
+
+### Time to Value
+
+| Metric | Value |
+|--------|-------|
+| **Setup** | 5 minutes (pip install or Docker) |
+| **First Analysis** | 10 minutes |
+| **Time to Master** | 4-6 hours |
+| **Incident Time Saved** | 6x faster than manual |
 
 ---
 
