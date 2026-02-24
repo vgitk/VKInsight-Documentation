@@ -183,7 +183,7 @@ docker run -d \
   vkinsight:latest
 ```
 
-See [Deployment Guide](../../deploy/README.md) for production deployment.
+See [Deployment Guide](../../deployment/DEPLOYMENT.md) for production deployment.
 
 ---
 
@@ -249,7 +249,7 @@ pip install -r requirements.txt
 | First time setup | [First Login](first-login.md) |
 | Load your logs | [Loading Data](loading-data.md) |
 | Start analyzing | [Quick Start](quick-start.md) |
-| Deploy to team | [Deployment Guide](../../deploy/README.md) |
+| Deploy to team | [Deployment Guide](../../deployment/DEPLOYMENT.md) |
 
 ---
 
