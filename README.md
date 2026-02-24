@@ -22,6 +22,7 @@ Complete documentation for VKInsight - the Kubernetes Pod Log Analyzer.
 | Slow `grep` on large files | **DuckDB + ripgrep** - 20-35x faster queries |
 | Tracing requests across services | **Trace Visualization** - Sequence diagrams from trace IDs |
 | Repetitive log noise | **Smart Squash** - Collapse 100 identical lines into one |
+| Need SQL on logs | **DuckDB Integration** - Query logs with familiar SQL |
 
 **Time to First Analysis:** 10 minutes | **Time to Master:** 4-6 hours
 
@@ -33,9 +34,11 @@ Complete documentation for VKInsight - the Kubernetes Pod Log Analyzer.
 - [Quick Start](#-quick-start)
 - [Start Based on Your Role](#-start-based-on-your-role)
 - [Key Features](#-key-features)
+- [Documentation Map](#-documentation-map)
 - [Documentation](#-documentation)
 - [Learning Path](#-learning-path)
 - [Getting Help](#-getting-help)
+- [Quick Reference](#-quick-reference)
 
 ---
 
@@ -93,9 +96,88 @@ Complete documentation for VKInsight - the Kubernetes Pod Log Analyzer.
 
 ---
 
+## 🗺️ Documentation Map
+
+```mermaid
+flowchart TB
+    subgraph Start["🚀 Start Here"]
+        QS[Quick Start]
+        Install[Installation]
+        Login[First Login]
+    end
+
+    subgraph Core["📊 Core Features"]
+        Dashboard[Dashboard]
+        LogView[Log Viewing]
+        Search[Search & Filtering]
+        CrossPod[Cross-Pod Search]
+    end
+
+    subgraph Advanced["⚡ Advanced"]
+        Pattern[Pattern Clustering]
+        AI[AI Analysis]
+        Pipe[Pipe Commands]
+        SQL[SQL Playground]
+    end
+
+    subgraph Enterprise["🏢 Enterprise"]
+        ISDE[ISDE Fetcher]
+        Server[Server Browser]
+        Export[Bulk Export]
+    end
+
+    subgraph Admin["🔐 Admin"]
+        Users[User Management]
+        Security[Security Setup]
+        Audit[Audit Logs]
+    end
+
+    subgraph Workflows["📋 Workflows"]
+        Incident[Incident Investigation]
+        Daily[Daily Analysis]
+    end
+
+    QS --> Dashboard
+    Install --> QS
+    Login --> QS
+
+    Dashboard --> LogView --> Search --> CrossPod
+    CrossPod --> Pattern --> AI
+
+    Search --> Pipe --> SQL
+    Dashboard --> ISDE
+    Dashboard --> Server
+    AI --> Export
+
+    CrossPod --> Incident
+    Dashboard --> Daily
+
+    style Start fill:#e3f2fd
+    style Core fill:#c8e6c9
+    style Advanced fill:#fff9c4
+    style Enterprise fill:#f3e5f5
+    style Admin fill:#ffccbc
+    style Workflows fill:#b2dfdb
+```
+
+<details>
+<summary>📱 Text version (for mobile/accessibility)</summary>
+
+**Learning Path:**
+1. **Start Here** → Quick Start, Installation, First Login
+2. **Core Features** → Dashboard, Log Viewing, Search, Cross-Pod Search
+3. **Advanced** → Pattern Clustering, AI Analysis, Pipe Commands, SQL
+4. **Enterprise** → ISDE Fetcher, Server Browser, Bulk Export
+5. **Admin** → User Management, Security Setup, Audit Logs
+6. **Workflows** → Incident Investigation, Daily Analysis
+
+</details>
+
+---
+
 ## 📚 Documentation
 
-### 🚀 Getting Started (7 guides)
+### 🚀 Getting Started (5 guides)
 New to VKInsight? Start here:
 - [Quick Start](getting-started/quick-start.md) - Get analyzing in 15 minutes
 - [Installation](getting-started/installation.md) - System requirements and setup
@@ -158,6 +240,10 @@ Quick lookup:
 - [Error Messages](reference/error-messages.md) - Troubleshoot errors
 - [Service Mapping](reference/service-mapping.md) - Pod-to-service mapping
 
+### 🗓️ Roadmap (1 guide)
+Planned enhancements:
+- [Bookmarks Roadmap](roadmap/bookmarks-roadmap.md) - Bookmark feature enhancements
+
 ### 🔧 Troubleshooting (2 guides)
 Problem solving:
 - [Common Issues](troubleshooting/common-issues.md) - Frequent problems and solutions
@@ -210,15 +296,16 @@ Problem solving:
 
 | Section | Guides | Description |
 |---------|--------|-------------|
-| Getting Started | 7 | Installation and setup |
+| Getting Started | 5 | Installation and setup |
 | Core Features | 12 | Essential capabilities |
 | Advanced | 7 | Power user features |
 | Enterprise | 5 | Production deployment |
 | Workflows | 2 | Step-by-step guides |
 | Administration | 4 | System management |
 | Reference | 7 | Quick lookup |
+| Roadmap | 1 | Planned features |
 | Troubleshooting | 2 | Problem solving |
-| **Total** | **48+** | Complete user guide |
+| **Total** | **45+** | Complete user guide |
 
 ---
 
@@ -231,6 +318,7 @@ Problem solving:
 | **Performance issues** | [Performance Guide](troubleshooting/performance.md) |
 | **Term definitions** | [Glossary](../GLOSSARY.md) |
 | **Feature request** | [GitHub Issues](https://github.com/vgitk/VKInsight-Documentation/issues) |
+| **Documentation feedback** | vivek.f.kumar@oracle.com |
 
 ---
 
@@ -270,13 +358,9 @@ Problem solving:
 | Attribute | Value |
 |-----------|-------|
 | **Version** | 2.7.0 |
-| **Total Pages** | 48+ |
+| **Total Pages** | 45+ |
 | **Last Updated** | 2026-02-23 |
 | **Compatibility** | Python 3.11+, Streamlit 1.51+ |
-
----
-
-*For the detailed navigation with Mermaid diagrams, see [index.md](index.md)*
 
 ---
 
