@@ -82,7 +82,7 @@ Complete documentation for VKInsight - the Kubernetes Pod Log Analyzer.
 ### **Advanced Capabilities**
 | Feature | Description | Guide |
 |---------|-------------|-------|
-| 🤖 **AI Analysis** | Intelligent root cause detection with OCA/Ollama | [Guide](advanced/ai-analysis.md) |
+| 🤖 **AI Analysis** | Intelligent root cause detection with OCA | [Guide](advanced/ai-analysis.md) |
 | 🔧 **Pipe Commands** | Unix-style processing (grep, awk, jq, stats) | [Guide](advanced/pipe-commands.md) |
 | 📈 **SQL Playground** | Query logs with DuckDB SQL | [Guide](advanced/sql-playground.md) |
 | 🌐 **Trace Visualization** | Service-to-service request flow diagrams | [Guide](advanced/trace-visualization.md) |

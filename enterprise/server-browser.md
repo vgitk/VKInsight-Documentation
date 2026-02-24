@@ -233,21 +233,79 @@ Filter visible files:
 
 ### Credential Storage
 
-- Encrypted with Fernet
-- Session-scoped
-- Clear on logout
+- Encrypted with Fernet (AES-128-CBC)
+- Session-scoped only (never persisted to disk)
+- Cleared on logout or session timeout
+- Master key derived from user's login password
 
-### SSH Security
+### SSH Security Best Practices
 
-- Key fingerprint verification
-- Encrypted transfer
-- No plain-text passwords
+#### Host Key Verification
+
+When connecting to a server for the first time, VKInsight displays the SSH host key fingerprint:
+
+```
+The authenticity of host 'server.example.com' can't be established.
+ED25519 key fingerprint is SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Are you sure you want to continue connecting?
+```
+
+**IMPORTANT:** Always verify this fingerprint matches your server's known fingerprint before accepting.
+
+| Action | When to Use |
+|--------|-------------|
+| **Accept** | Fingerprint matches expected value |
+| **Reject** | Fingerprint is unknown or suspicious |
+| **Verify first** | First-time connection to new server |
+
+#### How to Verify Host Fingerprints
+
+On the target server, run:
+```bash
+ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub
+```
+
+Compare the output with the fingerprint shown in VKInsight.
+
+#### Host Key Change Warning
+
+If you see a warning that the host key has changed:
+
+```
+WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
+```
+
+This could indicate:
+1. **Legitimate change:** Server was reinstalled or keys rotated
+2. **Security concern:** Possible man-in-the-middle attack
+
+**Before proceeding:**
+1. Contact your server administrator
+2. Verify the key change was intentional
+3. Only accept if confirmed legitimate
+
+#### Credential Handling
+
+| Aspect | Implementation |
+|--------|----------------|
+| Password transmission | Encrypted via SSH tunnel |
+| Password storage | Session memory only (not disk) |
+| Password clearing | On logout, timeout, or browser close |
+| Key-based auth | Supported (recommended for production) |
+
+### Network Security
+
+- All data transferred via encrypted SSH tunnel
+- SFTP protocol used (SSH File Transfer Protocol)
+- No unencrypted connections supported
+- Connection timeouts enforced
 
 ### Audit Trail
 
-- Connections logged
-- Transfers logged
-- Admin visibility
+- All connections logged with timestamp and user
+- File transfers logged (filename, size, destination)
+- Failed connection attempts logged
+- Audit logs visible to administrators
 
 ---
 
