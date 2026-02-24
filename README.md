@@ -9,11 +9,32 @@ Complete documentation for VKInsight - the Kubernetes Pod Log Analyzer.
 
 ---
 
+## 💡 Why VKInsight?
+
+**The Problem:** Kubernetes debugging is painful. You're drowning in logs spread across dozens of pods, containers, and services. Finding that one error means hours of `kubectl logs | grep` across multiple terminals.
+
+**The Solution:** VKInsight gives you a single pane of glass for all your pod logs:
+
+| Challenge | VKInsight Solution |
+|-----------|-------------------|
+| Searching 50+ pods manually | **Cross-Pod Search** - Query all pods in one click |
+| "Which pod had that error?" | **Pattern Clustering** - Auto-group similar errors |
+| Slow `grep` on large files | **DuckDB + ripgrep** - 20-35x faster queries |
+| Tracing requests across services | **Trace Visualization** - Sequence diagrams from trace IDs |
+| Repetitive log noise | **Smart Squash** - Collapse 100 identical lines into one |
+
+**Time to First Analysis:** 10 minutes | **Time to Master:** 4-6 hours
+
+---
+
 ## 📑 Table of Contents
 
+- [Why VKInsight?](#-why-vkinsight)
 - [Quick Start](#-quick-start)
-- [Documentation](#-documentation)
+- [Start Based on Your Role](#-start-based-on-your-role)
 - [Key Features](#-key-features)
+- [Documentation](#-documentation)
+- [Learning Path](#-learning-path)
 - [Getting Help](#-getting-help)
 
 ---
@@ -27,72 +48,177 @@ Complete documentation for VKInsight - the Kubernetes Pod Log Analyzer.
 | **Learn core features** | [Core Features](core-features/) |
 | **Use advanced features** | [Advanced Features](advanced/) |
 | **Find keyboard shortcuts** | [Keyboard Shortcuts](reference/keyboard-shortcuts.md) |
+| **Troubleshoot issues** | [Common Issues](troubleshooting/common-issues.md) |
 
 ---
 
-## 📚 Documentation
+## 🎯 Start Based on Your Role
 
-### **Getting Started** (7 guides)
-New to VKInsight? Start here:
-- [Quick Start](getting-started/quick-start.md) - Get analyzing in 15 minutes
-- [Installation](getting-started/installation.md) - System requirements and setup
-- [First Login](getting-started/first-login.md) - Authentication and initial configuration
-- [Loading Data](getting-started/loading-data.md) - Import logs from various sources
+| Role | Start Here | Time |
+|------|-----------|------|
+| **SRE / On-Call** | [Incident Investigation](workflows/incident-investigation.md) | 15 min |
+| **Platform Engineer** | [Quick Start](getting-started/quick-start.md) → [Admin Setup](admin/dashboard.md) | 30 min |
+| **DevOps** | [Installation](getting-started/installation.md) → [Configuration](reference/configuration.md) | 45 min |
+| **Data Analyst** | [SQL Playground](advanced/sql-playground.md) + [Pipe Commands](advanced/pipe-commands.md) | 20 min |
+| **New User** | [Quick Start](getting-started/quick-start.md) → [Log Viewing](core-features/log-viewing.md) | 15 min |
 
-### **Core Features** (12 guides)
-Essential log analysis capabilities:
-- [Dashboard](core-features/dashboard.md) - Overview metrics and KPIs
-- [Log Viewing](core-features/log-viewing.md) - Browse and inspect logs
-- [Search & Filtering](core-features/search-filtering.md) - Find what you need
-- [Cross-Pod Search](core-features/cross-pod-search.md) - Search across all pods
-- [Smart Squash](core-features/smart-squash.md) - Collapse repetitive lines
-- [Bookmarks](core-features/bookmarks.md) - Save important findings
-
-### **Advanced Features** (7 guides)
-Power user capabilities:
-- [Pattern Clustering](advanced/pattern-clustering.md) - Auto-group similar logs
-- [AI Analysis](advanced/ai-analysis.md) - Intelligent log insights
-- [Pipe Commands](advanced/pipe-commands.md) - Unix-style processing (grep, awk, jq)
-- [SQL Playground](advanced/sql-playground.md) - Query with DuckDB
-- [Trace Visualization](advanced/trace-visualization.md) - Request flow diagrams
-
-### **Enterprise Features** (5 guides)
-Production deployment capabilities:
-- [ISDE Fetcher](enterprise/isde-fetcher.md) - Fetch Oracle debug data
-- [Server Browser](enterprise/server-browser.md) - Remote file access
-- [Resource Inspector](enterprise/resource-inspector.md) - Kubernetes resource analysis
-
-### **Administration** (4 guides)
-For system administrators:
-- [Admin Dashboard](admin/dashboard.md) - System health overview
-- [User Management](admin/user-management.md) - Manage users and roles
-- [Security Setup](admin/security-setup.md) - 2FA and backup codes
-
-### **Reference** (7 guides)
-Quick lookup:
-- [Keyboard Shortcuts](reference/keyboard-shortcuts.md) - Speed up your workflow
-- [Pipe Commands](reference/pipe-command-ref.md) - grep, awk, jq syntax
-- [Configuration](reference/configuration.md) - App settings
-- [Quick Filters](reference/quick-filters.md) - Pre-configured patterns
-
-### **Troubleshooting** (2 guides)
-- [Common Issues](troubleshooting/common-issues.md) - Frequent problems and solutions
-- [Performance](troubleshooting/performance.md) - Optimization tips
+> **First time?** Start with the [Quick Start Guide](getting-started/quick-start.md) - you'll be analyzing logs in 10 minutes.
 
 ---
 
 ## ⚡ Key Features
 
-| Feature | Description |
-|---------|-------------|
-| 🔍 **Cross-Pod Search** | Search all pods simultaneously with DuckDB speed |
-| 🤖 **AI Analysis** | Intelligent root cause detection with OCA/Ollama |
-| 📊 **Pattern Clustering** | Auto-group similar log messages using Drain3 |
-| ⭐ **Bookmarks** | Save important findings with pod context |
-| 🔧 **Pipe Commands** | Unix-style processing (grep, awk, jq, stats) |
-| 📈 **SQL Playground** | Query logs with DuckDB SQL |
-| 🔄 **Smart Squash** | Collapse repetitive lines with time tracking |
-| 🌐 **Trace Visualization** | Service-to-service request flow diagrams |
+### **Core Analysis**
+| Feature | Description | Guide |
+|---------|-------------|-------|
+| 🔍 **Cross-Pod Search** | Search all pods simultaneously with DuckDB speed | [Guide](core-features/cross-pod-search.md) |
+| 📊 **Pattern Clustering** | Auto-group similar log messages using Drain3 | [Guide](advanced/pattern-clustering.md) |
+| 🎯 **Single Pod View** | Deep dive into individual pod logs | [Guide](core-features/single-pod-view.md) |
+| 🔄 **Smart Squash** | Collapse repetitive lines with time tracking | [Guide](core-features/smart-squash.md) |
+
+### **Advanced Capabilities**
+| Feature | Description | Guide |
+|---------|-------------|-------|
+| 🤖 **AI Analysis** | Intelligent root cause detection with OCA/Ollama | [Guide](advanced/ai-analysis.md) |
+| 🔧 **Pipe Commands** | Unix-style processing (grep, awk, jq, stats) | [Guide](advanced/pipe-commands.md) |
+| 📈 **SQL Playground** | Query logs with DuckDB SQL | [Guide](advanced/sql-playground.md) |
+| 🌐 **Trace Visualization** | Service-to-service request flow diagrams | [Guide](advanced/trace-visualization.md) |
+
+### **Enterprise Features**
+| Feature | Description | Guide |
+|---------|-------------|-------|
+| 🖥️ **Server Browser** | Remote server file browsing via SSH/SFTP | [Guide](enterprise/server-browser.md) |
+| 📥 **ISDE Fetcher** | Fetch debug data directly from ISDE servers | [Guide](enterprise/isde-fetcher.md) |
+| ⭐ **Bookmarks** | Save important findings with pod context | [Guide](core-features/bookmarks.md) |
+
+---
+
+## 📚 Documentation
+
+### 🚀 Getting Started (7 guides)
+New to VKInsight? Start here:
+- [Quick Start](getting-started/quick-start.md) - Get analyzing in 15 minutes
+- [Installation](getting-started/installation.md) - System requirements and setup
+- [First Login](getting-started/first-login.md) - Authentication and initial configuration
+- [Loading Data](getting-started/loading-data.md) - Import logs from various sources
+- [Profile Setup](getting-started/profile.md) - Configure your preferences
+
+### 📊 Core Features (12 guides)
+Essential log analysis capabilities:
+- [Dashboard](core-features/dashboard.md) - Overview metrics and KPIs
+- [Pod Analytics](core-features/pod-analytics.md) - Application and Istio log analysis
+- [Log Viewing](core-features/log-viewing.md) - Browse and inspect logs
+- [Search & Filtering](core-features/search-filtering.md) - Find what you need
+- [Cross-Pod Search](core-features/cross-pod-search.md) - Search across all pods
+- [Single Pod View](core-features/single-pod-view.md) - Focused pod analysis
+- [Time Navigation](core-features/time-navigation.md) - Filter by time range
+- [Smart Squash](core-features/smart-squash.md) - Collapse repetitive lines
+- [Bookmarks](core-features/bookmarks.md) - Save important findings
+- [Pod Overlap](core-features/pod-overlap.md) - Time coverage analysis
+- [Log Availability](core-features/log-availability.md) - Data completeness
+- [Multi-Container](core-features/multi-container.md) - Envoy sidecar support
+
+### ⚡ Advanced Features (7 guides)
+Power user capabilities:
+- [Pattern Clustering](advanced/pattern-clustering.md) - Auto-group similar logs
+- [AI Analysis](advanced/ai-analysis.md) - Intelligent log insights
+- [Pipe Commands](advanced/pipe-commands.md) - Unix-style processing
+- [JSON Workbench](advanced/json-workbench.md) - JSON viewing and diff
+- [SQL Playground](advanced/sql-playground.md) - Query with DuckDB
+- [Network Graph](advanced/network-graph.md) - Visualize service connections
+- [Trace Visualization](advanced/trace-visualization.md) - Request flow diagrams
+
+### 🏢 Enterprise Features (5 guides)
+Production deployment capabilities:
+- [ISDE Fetcher](enterprise/isde-fetcher.md) - Fetch Oracle debug data
+- [Server Browser](enterprise/server-browser.md) - Remote file access
+- [Resource Inspector](enterprise/resource-inspector.md) - Kubernetes resource analysis
+- [Bulk Export](enterprise/bulk-export.md) - Export filtered logs
+- [Bulk Export Viewer](enterprise/bulk-export-viewer.md) - View export configurations
+
+### 📋 Workflows (2 guides)
+Step-by-step guides for common tasks:
+- [Incident Investigation](workflows/incident-investigation.md) - P1 response playbook
+- [Daily Analysis](workflows/daily-analysis.md) - SRE morning routine
+
+### 🔐 Administration (4 guides)
+For system administrators:
+- [Admin Dashboard](admin/dashboard.md) - System health overview
+- [User Management](admin/user-management.md) - Manage users and roles
+- [Security Setup](admin/security-setup.md) - 2FA and backup codes
+- [Audit Logs](admin/audit-logs.md) - Track user activities
+
+### 📖 Reference (7 guides)
+Quick lookup:
+- [Feature Selection Guide](reference/feature-selection-guide.md) - Which tool to use
+- [Keyboard Shortcuts](reference/keyboard-shortcuts.md) - Speed up your workflow
+- [Pipe Commands Reference](reference/pipe-command-ref.md) - grep, awk, jq syntax
+- [Configuration](reference/configuration.md) - App settings
+- [Quick Filters](reference/quick-filters.md) - Pre-configured patterns
+- [Error Messages](reference/error-messages.md) - Troubleshoot errors
+- [Service Mapping](reference/service-mapping.md) - Pod-to-service mapping
+
+### 🔧 Troubleshooting (2 guides)
+Problem solving:
+- [Common Issues](troubleshooting/common-issues.md) - Frequent problems and solutions
+- [Performance](troubleshooting/performance.md) - Optimization tips
+
+---
+
+## 🗺️ Learning Path
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  🚀 START HERE                                                  │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │
+│  │ Quick Start │→ │ First Login │→ │ Loading Data│             │
+│  └─────────────┘  └─────────────┘  └─────────────┘             │
+└─────────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────────┐
+│  📊 CORE FEATURES                                               │
+│  ┌───────────┐  ┌─────────────┐  ┌──────────────┐              │
+│  │ Dashboard │→ │ Log Viewing │→ │ Search/Filter│              │
+│  └───────────┘  └─────────────┘  └──────────────┘              │
+│                                          ↓                      │
+│  ┌───────────────┐  ┌─────────────┐  ┌───────────┐             │
+│  │Cross-Pod Search│→ │ Smart Squash│→ │ Bookmarks │             │
+│  └───────────────┘  └─────────────┘  └───────────┘             │
+└─────────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────────┐
+│  ⚡ ADVANCED                                                    │
+│  ┌──────────────┐  ┌─────────────┐  ┌───────────────┐          │
+│  │ AI Analysis  │  │Pipe Commands│  │ SQL Playground│          │
+│  └──────────────┘  └─────────────┘  └───────────────┘          │
+│  ┌───────────────────┐  ┌──────────────────┐                   │
+│  │ Pattern Clustering│  │ Trace Visualization│                  │
+│  └───────────────────┘  └──────────────────┘                   │
+└─────────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────────┐
+│  🏢 ENTERPRISE                                                  │
+│  ┌──────────────┐  ┌───────────────┐  ┌─────────────┐          │
+│  │ ISDE Fetcher │  │ Server Browser│  │ Bulk Export │          │
+│  └──────────────┘  └───────────────┘  └─────────────┘          │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📊 Documentation Statistics
+
+| Section | Guides | Description |
+|---------|--------|-------------|
+| Getting Started | 7 | Installation and setup |
+| Core Features | 12 | Essential capabilities |
+| Advanced | 7 | Power user features |
+| Enterprise | 5 | Production deployment |
+| Workflows | 2 | Step-by-step guides |
+| Administration | 4 | System management |
+| Reference | 7 | Quick lookup |
+| Troubleshooting | 2 | Problem solving |
+| **Total** | **48+** | Complete user guide |
 
 ---
 
@@ -100,9 +226,42 @@ Quick lookup:
 
 | Need | Where to Go |
 |------|-------------|
+| **Quick answers** | [FAQ](../FAQ.md) |
 | **Common problems** | [Troubleshooting](troubleshooting/common-issues.md) |
 | **Performance issues** | [Performance Guide](troubleshooting/performance.md) |
+| **Term definitions** | [Glossary](../GLOSSARY.md) |
 | **Feature request** | [GitHub Issues](https://github.com/vgitk/VKInsight-Documentation/issues) |
+
+---
+
+## ⌨️ Quick Reference
+
+### Essential Keyboard Shortcuts
+
+| Shortcut | Action |
+|----------|--------|
+| `Ctrl+F` | Focus search input |
+| `Ctrl+R` | Reload data |
+| `Ctrl+Scroll` | Zoom log viewer |
+| `Right-click` | Context menu |
+
+### Common Pipe Commands
+
+```bash
+# Search for errors
+| grep ERROR
+
+# Count unique IPs
+| grep "sourceIP" | cut -d: -f2 | sort | uniq -c
+
+# Statistical summary
+| stats
+
+# Distribution histogram
+| histogram
+```
+
+> **Full reference:** [Keyboard Shortcuts](reference/keyboard-shortcuts.md) | [Pipe Commands](reference/pipe-command-ref.md)
 
 ---
 
@@ -117,4 +276,8 @@ Quick lookup:
 
 ---
 
-*For the complete documentation index, see [index.md](index.md)*
+*For the detailed navigation with Mermaid diagrams, see [index.md](index.md)*
+
+---
+
+*Last Updated: 2026-02-23*
