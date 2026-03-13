@@ -55,7 +55,7 @@ flowchart LR
 ## Accessing Pod Analytics
 
 1. Load log data from sidebar
-2. Go to **Log Inspector** page
+2. Go to **Log Analyzer** page
 3. Click **Pod Logs & Analytics** tab
 
 ---
@@ -122,7 +122,7 @@ Helps identify:
 
 1. Click any row in the pod table
 2. Pod is selected for drilldown
-3. Switch to **Log Inspector** tab
+3. Switch to **Log Analyzer** tab
 4. View detailed logs for selected pod
 
 ---

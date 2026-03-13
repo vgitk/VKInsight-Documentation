@@ -67,7 +67,7 @@ flowchart LR
 
 ### Manual Selection
 
-1. Go to **Log Inspector** tab
+1. Go to **Log Analyzer** tab
 2. Select **Single Pod View** mode
 3. Choose pod from dropdown
 4. Choose container (if multiple)

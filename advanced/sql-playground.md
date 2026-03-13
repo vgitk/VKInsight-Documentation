@@ -50,7 +50,7 @@ flowchart LR
 ## Accessing SQL Playground
 
 1. Load log data
-2. Go to **Log Inspector** tab
+2. Go to **Log Analyzer** tab
 3. Click **SQL Playground** tab
 
 ---

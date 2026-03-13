@@ -53,7 +53,7 @@ flowchart LR
 ## Accessing Log Availability
 
 1. Load data from any source
-2. Go to **Log Inspector** tab
+2. Go to **Log Analyzer** tab
 3. Click **Log Availability** tab
 
 ---

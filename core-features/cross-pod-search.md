@@ -54,7 +54,7 @@ flowchart LR
 
 ## Accessing Cross-Pod Search
 
-1. Go to **Log Inspector** tab
+1. Go to **Log Analyzer** tab
 2. Select **Cross-Pod Search** mode (toggle)
 3. All pods are now searchable
 

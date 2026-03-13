@@ -130,7 +130,7 @@ Count affected components:
 
 ### Step 2.2: Filter to Errors
 
-1. In **Log Inspector**
+1. In **Log Analyzer**
 2. Set **Log Level** filter: ERROR, WARN
 3. Or search for: `ERROR|WARN`
 
@@ -149,7 +149,7 @@ Use **Pod Analytics** tab:
 ### Step 3.1: Single Pod Analysis
 
 1. Click the problem pod in the list
-2. Switch to **Log Inspector** tab
+2. Switch to **Log Analyzer** tab
 3. Pod is now filtered
 4. Review error messages
 

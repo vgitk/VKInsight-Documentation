@@ -166,7 +166,7 @@ Once data loads successfully:
 ### Next Steps
 
 1. **Dashboard Tab** → View overview metrics
-2. **Log Inspector Tab** → Start searching
+2. **Log Analyzer Tab** → Start searching
 3. **Apply Filters** → Narrow by time, service, level
 
 ---

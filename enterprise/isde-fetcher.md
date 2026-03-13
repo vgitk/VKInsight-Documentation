@@ -67,7 +67,7 @@ flowchart LR
 
 ## Accessing ISDE Fetcher
 
-1. Go to **Log Inspector** page
+1. Go to **Log Analyzer** page
 2. Click **ISDE Fetcher** tab
 3. Or use sidebar navigation
 

@@ -81,7 +81,7 @@ Before starting, ensure you have:
 1. Open VKInsight in your browser
 2. Enter your credentials
 3. Complete 2FA if enabled
-4. You'll land on the **Log Inspector** page
+4. You'll land on the **Log Analyzer** page
 
 **First time?** Default credentials are provided by your administrator.
 
@@ -137,7 +137,7 @@ Click the **Dashboard** tab to see:
 
 ### Quick Search
 
-1. Click the **Log Inspector** tab
+1. Click the **Log Analyzer** tab
 2. Type in the search box: `ERROR`
 3. Press **Enter**
 4. Results highlight in the viewer
@@ -249,7 +249,7 @@ Now that you've completed the basics:
 | Task | Where |
 |------|-------|
 | See all errors | Dashboard → Error count |
-| Find specific text | Log Inspector → Search |
+| Find specific text | Log Analyzer → Search |
 | Analyze patterns | Pattern Analysis tab |
 | Get AI help | AI Analyst tab |
 | Export data | Export button |

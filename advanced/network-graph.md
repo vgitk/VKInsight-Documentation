@@ -54,7 +54,7 @@ flowchart LR
 ## Accessing Network Graph
 
 1. Load log data
-2. Go to **Log Inspector** tab
+2. Go to **Log Analyzer** tab
 3. Click **Network Graph** tab
 
 ---

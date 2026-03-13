@@ -51,7 +51,7 @@ flowchart LR
 ## Accessing Pod Overlap
 
 1. Load multiple pods
-2. Go to **Log Inspector** tab
+2. Go to **Log Analyzer** tab
 3. Click **Pod Overlap** tab
 
 ---
